@@ -1,0 +1,12 @@
+services:
+  db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    container_name: db
+    volumes: 
+      - /data/db
+    command: [--auth]
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
